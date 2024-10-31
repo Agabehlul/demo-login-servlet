@@ -76,3 +76,88 @@ button:hover {
 .login-link a:hover {
     text-decoration: underline;
 }
+/* Tablonun əsas stili */
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #333;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Başlıqların stili */
+table th {
+    background-color: #4c5caf;
+    color: white;
+    padding: 12px 15px;
+    text-align: left;
+}
+
+/* Sətirlərin stili */
+table td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+}
+
+/* Zolaq effekti */
+table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* Hover effekti */
+table tr:hover {
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
+
+/* Sil və Düzəliş keçidləri üçün stil */
+table td a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+table td a:hover {
+    text-decoration: underline;
+}
+
+/* Tablonun başlığını və düymələrini düzəltmək */
+h1 {
+    text-align: center;
+    color: #4c5caf;
+}
+
+button {
+    background-color: #4c5caf;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+/* Footer Üçün Stil */
+footer {
+    background-color: #f1f1f1; /* Arxa fon rəngi */
+    padding: 20px; /* İç boşluq */
+    text-align: center; /* Mətni mərkəzləşdir */
+    font-size: 14px; /* Mətnin ölçüsü */
+    color: #666; /* Mətnin rəngi */
+    position: relative; /* Pozisiyonu tənzimləmək üçün */
+    bottom: 0; /* Alt hissəyə uyğunlaşdır */
+    width: 100%; /* Tam genişlik */
+}
+
+

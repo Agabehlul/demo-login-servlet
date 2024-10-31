@@ -16,12 +16,20 @@
 </head>
 <body>
 <div class="signup-container">
-    <form class="signup-form" action="first.jsp" method="POST">
+    <form class="signup-form" action="${pageContext.request.contextPath}/RegisterServlet" method="POST">
         <h2>Sign Up</h2>
         <div class="form-group">
             <label for="username">Username</label>
             <input type="text" id="username" name="username" required>
         </div>
+<%--        <div class="form-group">--%>
+<%--            <label for="surname">Surname</label>--%>
+<%--            <input type="text" id="surname" name="surname" required>--%>
+<%--        </div>--%>
+<%--        <div class="form-group">--%>
+<%--            <label for="age">Age</label>--%>
+<%--            <input type="number" id="age" name="age" required>--%>
+<%--        </div>--%>
         <div class="form-group">
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required>
@@ -34,6 +42,7 @@
         <p class="login-link">Already have an account? <a href="index.jsp">Login</a></p>
     </form>
 </div>
+
 </body>
 </html>
 
