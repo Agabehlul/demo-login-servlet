@@ -39,10 +39,10 @@ public class DeleteServlet extends HttpServlet {
                 throw new RuntimeException(e);
             } finally {
                 db.disconnect();
-                request.getRequestDispatcher("first.jsp").forward(request, response);
+                request.getRequestDispatcher("list.jsp").forward(request, response);
             }
         } else {
-            response.sendRedirect("first.jsp");
+            response.sendRedirect("list.jsp");
         }
     }
 }

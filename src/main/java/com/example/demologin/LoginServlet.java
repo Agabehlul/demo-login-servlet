@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
+
 
 @WebServlet(value = "/LoginServlet")
 public class LoginServlet extends HttpServlet {
@@ -53,7 +53,7 @@ public class LoginServlet extends HttpServlet {
             usernameCookie.setMaxAge(3600);
             response.addCookie(usernameCookie);
 
-            response.sendRedirect("first.jsp");
+            response.sendRedirect("list.jsp");
         } else {
             response.sendRedirect("index.jsp");
         }

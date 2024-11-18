@@ -54,7 +54,7 @@
         <td><%= resultSet.getString("username") %>
         <td><%= resultSet.getBoolean("status") %></td>
         <td><a href="#" onClick="confirmDelete(<%= resultSet.getInt("id") %>)">Delete</a></td>
-        <td><a href="#" onClick="confirmEdit(<%= resultSet.getInt("id") %>)">Edit</a></td>
+        <td><a href="" onClick="confirmEdit(<%= resultSet.getInt("id") %>)">Edit</a></td>
     </tr>
     <% }
     } catch (Exception e) {
@@ -62,6 +62,9 @@
     }
     %>
 </table>
+<!-- Edit Form -->
+
+
 
 <%
     } else {
@@ -74,12 +77,46 @@
         if (isConfirmed) {
             window.location.href = "DeleteServlet?id=" + id;
         } else {
-            window.location.href = "first.jsp";
+            window.location.href = "list.jsp";
         }
     }
 </script>
+<script>
+    function confirmEdit(id) {
+
+        document.getElementById('editId').value = id;
+
+
+        var username = prompt("Enter new username:");
+        if (username) {
+            document.getElementById('editUsername').value = username;
+        } else {
+            alert("Username cannot be empty.");
+            return;
+        }
+
+
+        var password = prompt("Enter new password:");
+        if (password) {
+            document.getElementById('editPassword').value = password;
+        } else {
+            alert("Password cannot be empty.");
+            return;
+        }
+        document.getElementById('editForm').submit();
+    }
+</script>
+
+<!-- Edit Form -->
+<form id="editForm" method="post" action="UpdateServlet">
+    <input type="hidden" id="editId" name="id">
+    <input type="hidden" id="editUsername" name="username">
+    <input type="hidden" id="editPassword" name="password">
+</form>
+
+
 <footer style="background-color: #f1f1f1; padding: 20px; text-align: center; font-size: 14px; color: #666;">
-    <p>&copy; 2024 Ağabəhlul İsmayılzadə. All rights reserved.</p>
+    <p>&copy; 2024 Agabehlul. All rights reserved.</p>
 </footer>
 </body>
 
