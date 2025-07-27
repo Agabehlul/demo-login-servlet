@@ -1,25 +1,36 @@
-package com.example.demologin;
+package com.example.demologin.model;
 
-public class User {
-    private Integer id;
+
+public class Teacher {
+    private int id;
+    private String fullName;
     private String username;
     private String password;
-    private Boolean status;
-    public User(){
 
-    }
-    public User(Integer id, String username, String password) {
+    public Teacher(int id, String fullName, String username, String password) {
         this.id = id;
+        this.fullName = fullName;
         this.username = username;
         this.password = password;
     }
 
-    public Integer getId() {
+    public Teacher() {
+    }
+
+    public int getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(int id) {
         this.id = id;
+    }
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getUsername() {
@@ -36,13 +47,5 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-    }
-
-    public Boolean getStatus() {
-        return status;
-    }
-
-    public void setStatus(Boolean status) {
-        this.status = status;
     }
 }

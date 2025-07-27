@@ -1,10 +1,10 @@
-package com.example.demologin;
+package com.example.demologin.util;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbClass {
-    static final String CONNECTION_URL = "jdbc:postgresql://localhost:5432/java162";
+    static final String CONNECTION_URL = "jdbc:postgresql://localhost:5432/postgres";
     static final String USERNAME = "postgres";
     static final String PASSWORD = "12345";
     public static Connection CONNECTION;
