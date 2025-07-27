@@ -1,0 +1,135 @@
+/* Google Fonts-dan modern bir şrift idxal edirik */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Rəng palitrası və digər dəyişənlər */
+:root {
+    --primary-green: #2ecc71;  /* Əsas yaşıl rəng */
+    --primary-green-hover: #27ae60;
+    --accent-orange: #e67e22; /* Vurğulayıcı narıncı rəng */
+    --accent-orange-hover: #d35400;
+    --background-color: #f4f7f6; /* Açıq, neytral fon */
+    --form-background: #ffffff;
+    --text-color: #34495e; /* Tünd mətn rəngi */
+    --input-border-color: #ecf0f1;
+    --border-radius: 10px;
+    --shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Ümumi stillər */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px 0;
+}
+
+/* Qeydiyyat Konteyneri */
+.signup-container {
+    max-width: 550px;
+    width: 100%;
+    padding: 20px;
+}
+
+/* Formanın özü */
+.signup-form {
+    background: var(--form-background);
+    padding: 45px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    border-top: 5px solid var(--primary-green); /* Formanın yuxarısında yaşıl xətt */
+}
+
+/* Form başlığı */
+.signup-form h2 {
+    text-align: center;
+    font-size: 2.2rem;
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 35px;
+}
+
+/* Form qrupları */
+.form-group {
+    margin-bottom: 22px;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+/* Bütün input və select sahələri */
+.form-group input,
+.form-group select {
+    width: 100%;
+    padding: 14px 18px;
+    border: 1px solid var(--input-border-color);
+    background-color: var(--background-color);
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+/* Fokus olanda narıncı effekt */
+.form-group input:focus,
+.form-group select:focus {
+    outline: none;
+    border-color: var(--accent-orange);
+    box-shadow: 0 0 8px rgba(230, 126, 34, 0.2);
+}
+
+/* Qeydiyyat düyməsi (narıncı) */
+button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background-color: var(--accent-orange);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 15px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--accent-orange-hover);
+    transform: translateY(-3px); /* Klik hissi yaratmaq üçün */
+}
+
+/* Giriş səhifəsinə keçid linki */
+.login-link {
+    text-align: center;
+    margin-top: 30px;
+    color: #777;
+}
+
+.login-link a {
+    color: var(--primary-green);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.login-link a:hover {
+    color: var(--primary-green-hover);
+    text-decoration: underline;
+}
+
+/* Responsiv dizayn (mobil cihazlar üçün) */
+@media (max-width: 600px) {
+    .signup-form {
+        padding: 30px;
+    }
+
+    .signup-form h2 {
+        font-size: 1.8rem;
+    }
+}

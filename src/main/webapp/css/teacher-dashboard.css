@@ -1,0 +1,153 @@
+/* Google Fonts-dan modern bir şrift idxal edirik */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap');
+
+/* Rəng palitrası və digər dəyişənlər */
+:root {
+    --primary-green: #2ecc71;  /* Əsas yaşıl rəng */
+    --secondary-orange: #e67e22; /* Vurğu üçün narıncı rəng */
+    --primary-orange-hover: #d35400;
+    --background-color: #f8f9fa; /* Çox açıq boz fon */
+    --card-background: #ffffff;  /* Kartların arxa fonu (ağ) */
+    --text-color: #34495e;  /* Tünd göyəçalan mətn rəngi */
+    --header-text-color: #ffffff;
+    --border-radius: 10px;
+    --shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Ümumi stillər */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.7;
+}
+
+/* Əsas konteyner */
+.dashboard-container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 25px;
+}
+
+/* Başlıq (Header) */
+.dashboard-header {
+    background: linear-gradient(135deg, var(--primary-green), #27ae60);
+    color: var(--header-text-color);
+    padding: 25px 30px;
+    border-radius: var(--border-radius);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
+}
+
+.dashboard-header h1 {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+/* Çıxış Düyməsi */
+.logout-button {
+    background-color: var(--card-background);
+    color: var(--primary-green);
+    border: 2px solid var(--card-background);
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.logout-button:hover {
+    background-color: transparent;
+    color: var(--card-background);
+}
+
+/* Əsas məzmun (Grid Layout) */
+.dashboard-main {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 25px;
+}
+
+/* Vidcetlər/Kartlar */
+.widget {
+    background-color: var(--card-background);
+    padding: 25px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease;
+}
+
+.widget:hover {
+    transform: translateY(-5px);
+}
+
+.widget h2 {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    margin-bottom: 15px;
+    font-weight: 600;
+    border-left: 4px solid var(--primary-green); /* Başlığın solunda yaşıl xətt */
+    padding-left: 15px;
+}
+
+.widget p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+/* Müxtəlif düymə stilləri */
+.button-primary, .button-secondary {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: var(--border-radius);
+    text-decoration: none;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Narıncı düymə */
+.button-primary {
+    background-color: var(--secondary-orange);
+    color: white;
+}
+
+.button-primary:hover {
+    background-color: var(--primary-orange-hover);
+    transform: scale(1.05);
+}
+
+/* Yaşıl çərçivəli düymə */
+.button-secondary {
+    background-color: transparent;
+    color: var(--primary-green);
+    border: 2px solid var(--primary-green);
+}
+
+.button-secondary:hover {
+    background-color: var(--primary-green);
+    color: white;
+}
+
+/* Responsiv dizayn (Mobil cihazlar üçün) */
+@media (max-width: 768px) {
+    .dashboard-header {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .dashboard-header h1 {
+        margin-bottom: 20px;
+        font-size: 1.7rem;
+    }
+}
