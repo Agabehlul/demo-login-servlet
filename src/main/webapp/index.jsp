@@ -1,28 +1,46 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="az">
 <head>
     <meta charset="UTF-8">
+    <title>Quiz Giriş</title>
+    <link rel="stylesheet" href="css/indexStylee.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="indexStyle.css">
 </head>
 <body>
-<div class="login-container">
-    <form class="login-form" action="LoginServlet" method="POST">
-        <h2>Login</h2>
-        <div class="form-group">
-            <label for="username">Username</label>
-            <input type="text" id="username" name="username" required>
-        </div>
-        <div class="form-group">
-            <label for="password">Password</label>
-            <input type="password" id="password" name="password" required>
-        </div>
-        <button type="submit">Login</button>
-        <p class="signup-link">Don't have an account? <a href="register.jsp">Sign up</a></p>
-    </form>
-</div>
-</body>
+<div class="container">
+    <h1>BSP LMS APP</h1>
+    <div class="role-buttons">
+        <button onclick="showForm('student')">Şagird Girişi</button>
+        <button onclick="showForm('teacher')">Müəllim Girişi</button>
+    </div>
 
+    <!-- Login Forms -->
+    <div class="login-form" id="studentForm" style="display:none;">
+        <h2>Şagird Girişi</h2>
+        <form action="StudentLoginServlet" method="post">
+            <input type="text" name="username" placeholder="İstifadəçi adı" required>
+            <input type="password" name="password" placeholder="Şifrə" required>
+            <button type="submit">Daxil ol</button>
+            <p class="login-link"> <a href="register.jsp">Qeydiyyatdan keç</a></p>
+        </form>
+    </div>
+
+    <div class="login-form" id="teacherForm" style="display:none;">
+        <h2>Müəllim Girişi</h2>
+        <form action="TeacherLoginServlet" method="post">
+            <input type="text" name="username" placeholder="İstifadəçi adı" required>
+            <input type="password" name="password" placeholder="Şifrə" required>
+            <button type="submit">Daxil ol</button>
+        </form>
+    </div>
+</div>
+
+<script>
+    function showForm(role) {
+        document.getElementById('studentForm').style.display = (role === 'student') ? 'block' : 'none';
+        document.getElementById('teacherForm').style.display = (role === 'teacher') ? 'block' : 'none';
+    }
+</script>
+</body>
 </html>

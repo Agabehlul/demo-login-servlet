@@ -1,0 +1,117 @@
+/* Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #4caf50, #81c784);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Container */
+.container {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    text-align: center;
+    max-width: 400px;
+    width: 90%;
+    transition: all 0.3s ease;
+}
+
+.container h1 {
+    margin-bottom: 25px;
+    color: #333333;
+    font-size: 26px;
+}
+
+/* Role selection buttons */
+.role-buttons {
+    margin-bottom: 20px;
+}
+
+.role-buttons button {
+    background-color: #388e3c;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    margin: 0 5px;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.role-buttons button:hover {
+    background-color: #2e7d32;
+}
+
+/* Login Form */
+.login-form {
+    display: none;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.login-form h2 {
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.login-form input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    transition: border-color 0.3s;
+}
+
+.login-form input:focus {
+    border-color: #4caf50;
+    outline: none;
+}
+
+.login-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #f57c00;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+.login-form button:hover {
+    background-color: #ef6c00;
+}
+
+/* Animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 480px) {
+    .container {
+        padding: 30px 20px;
+    }
+
+    .role-buttons button {
+        width: 100%;
+        margin: 8px 0;
+    }
+}

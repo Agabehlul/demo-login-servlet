@@ -1,0 +1,125 @@
+/* Google Fonts-dan modern bir şrift idxal edirik */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+/* Rəngləri və digər dəyərləri dəyişənlərdə saxlayaraq asan idarəetmə təmin edirik */
+:root {
+    --primary-color: #4a90e2; /* Göy rəng */
+    --primary-hover-color: #357abd;
+    --background-color: #f4f7f6; /* Açıq boz fon */
+    --card-background-color: #ffffff; /* Kartların arxa fonu (ağ) */
+    --text-color: #333333; /* Əsas mətn rəngi */
+    --header-text-color: #ffffff;
+    --border-radius: 12px;
+    --shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    --padding: 20px;
+}
+
+/* Ümumi stillər və reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Başlıq (Header) stilləri */
+header {
+    background-color: var(--primary-color);
+    color: var(--header-text-color);
+    padding: var(--padding);
+    display: flex; /* Elementləri yan-yana düzmək üçün */
+    justify-content: space-between; /* Elementlər arasında məsafə yaratmaq üçün */
+    align-items: center; /* Elementləri şaquli olaraq mərkəzə çəkmək üçün */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+    font-size: 1.8rem;
+    font-weight: 600;
+}
+
+/* Çıxış düyməsi */
+header button {
+    background-color: var(--card-background-color);
+    color: var(--primary-color);
+    border: none;
+    padding: 10px 20px;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+header button:hover {
+    background-color: var(--primary-hover-color);
+    color: var(--card-background-color);
+}
+
+/* Əsas məzmun (Main) */
+main {
+    max-width: 1200px;
+    margin: 40px auto; /* Yuxarıdan və aşağıdan boşluq, yanlardan avtomatik mərkəzləmə */
+    padding: 0 var(--padding);
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsiv grid layout */
+    gap: 30px; /* Kartlar arasında boşluq */
+}
+
+/* Hər bir bölmə (Section) üçün kart stili */
+section {
+    background-color: var(--card-background-color);
+    padding: var(--padding);
+    border-radius: var(--border-radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+section:hover {
+    transform: translateY(-5px); /* Kartın üzərinə gəldikdə yuxarı qalxma effekti */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+section h2 {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    border-bottom: 2px solid var(--background-color); /* Başlıq altı xətt */
+    padding-bottom: 10px;
+    font-weight: 600;
+}
+
+/* Profil məlumatları */
+section p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+section p strong {
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+/* Responsiv dizayn (Mobil cihazlar üçün) */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Başlıq elementlərini alt-alta düz */
+        text-align: center;
+    }
+
+    header h1 {
+        margin-bottom: 15px;
+        font-size: 1.5rem;
+    }
+
+    main {
+        margin-top: 20px;
+        gap: 20px; /* Mobil cihazlarda kartlar arası boşluğu azalt */
+    }
+}
