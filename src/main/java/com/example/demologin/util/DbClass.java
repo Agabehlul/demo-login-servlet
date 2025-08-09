@@ -1,26 +1,26 @@
 package com.example.demologin.util;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class DbClass {
-    static final String CONNECTION_URL = "jdbc:postgresql://localhost:5432/postgres";
+    // Railway PostgreSQL bağlantı məlumatları
+    static final String CONNECTION_URL = "jdbc:postgresql://yamabiko.proxy.rlwy.net:38131/railway";
     static final String USERNAME = "postgres";
-    static final String PASSWORD = "12345";
+    static final String PASSWORD = "pbJUzMFikJRPNDaZVyoHTBrIoaIKNzgh";
+
     public static Connection CONNECTION;
 
-    public void connect() throws SQLException {
+    public void connect() {
         try {
-            try {
-                Class.forName("org.postgresql.Driver");
-            } catch (ClassNotFoundException e) {
-                throw new RuntimeException(e);
-            }
+            Class.forName("org.postgresql.Driver");
             CONNECTION = DriverManager.getConnection(CONNECTION_URL, USERNAME, PASSWORD);
-            System.out.println("Connection successfully!");
-
-        } catch (Exception e) {
-            System.out.println("CONNECTION ERROR!  " + e.getMessage());
+            System.out.println("✅ Connection successfully!");
+        } catch (ClassNotFoundException e) {
+            System.out.println("PostgreSQL Driver not found!");
+        } catch (SQLException e) {
+            System.out.println("CONNECTION ERROR! " + e.getMessage());
         }
     }
 
@@ -28,13 +28,10 @@ public class DbClass {
         try {
             if (CONNECTION != null && !CONNECTION.isClosed()) {
                 CONNECTION.close();
-                System.out.println("Connection disconnected!");
+                System.out.println("❌ Connection disconnected!");
             }
         } catch (SQLException e) {
             System.out.println("DISCONNECTION ERROR: " + e.getMessage());
         }
     }
-
 }
-
-
