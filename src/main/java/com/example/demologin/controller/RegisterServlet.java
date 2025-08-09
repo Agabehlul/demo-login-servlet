@@ -52,7 +52,7 @@ public class RegisterServlet extends HttpServlet {
         try {
             db.connect();
             PreparedStatement ps = DbClass.CONNECTION.prepareStatement(
-                    "INSERT INTO students (name, surname, father_name, grade, username, password) VALUES (?, ?, ?, ?, ?, ?)"
+                    "INSERT INTO student (name, surname, father_name, grade, username, password) VALUES (?, ?, ?, ?, ?, ?)"
             );
             ps.setString(1, name);
             ps.setString(2, surname);
