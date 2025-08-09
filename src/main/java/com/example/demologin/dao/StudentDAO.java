@@ -35,4 +35,30 @@ public class StudentDAO {
 
         return students;
     }
+    public static Student getStudentById(int studentId) {
+        Student student = null;
+
+        try (Connection conn = DbClass.CONNECTION){
+            String query = "SELECT * FROM students WHERE id = ?";
+            PreparedStatement stmt = conn.prepareStatement(query);
+            stmt.setInt(1, studentId);
+            ResultSet rs = stmt.executeQuery();
+
+            if (rs.next()) {
+                student = new Student();
+                student.setId(rs.getInt("id"));
+                student.setName(rs.getString("name"));
+                student.setSurname(rs.getString("surname"));
+                student.setFatherName(rs.getString("father_name"));
+                student.setGrade(rs.getString("grade"));
+                student.setUsername(rs.getString("username"));
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        return student;
+    }
+
 }

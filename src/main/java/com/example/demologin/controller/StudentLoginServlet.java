@@ -29,7 +29,7 @@ public class StudentLoginServlet extends HttpServlet {
         try {
             db.connect();
 
-            PreparedStatement ps = DbClass.CONNECTION.prepareStatement("SELECT * FROM students WHERE username = ?");
+            PreparedStatement ps = DbClass.CONNECTION.prepareStatement("SELECT * FROM student WHERE username = ?");
             ps.setString(1, insertedUsername);
 
             ResultSet rs = ps.executeQuery();
